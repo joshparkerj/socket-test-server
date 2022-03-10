@@ -1,6 +1,7 @@
 const express = require('express');
 const http = require('http');
 const { Server } = require('socket.io');
+const socketDebug = require('debug')('socket');
 
 const getServerStarter = function getServerStarter() {
   const app = express();
@@ -9,10 +10,10 @@ const getServerStarter = function getServerStarter() {
   const people = [];
 
   io.on('connection', (socket) => {
-    console.log('a user connected');
+    socketDebug('a user connected');
 
     socket.on('addPerson', ({ name, age }) => {
-      console.log('addPerson', name, age);
+      socketDebug('addPerson', name, age);
       people.push({
         name,
         age,
@@ -22,12 +23,12 @@ const getServerStarter = function getServerStarter() {
     });
 
     socket.on('getPeople', () => {
-      console.log('getPeople', people.length);
+      socketDebug('getPeople', people.length);
       socket.emit('receiveAllPeople', people);
     });
 
     socket.on('disconnect', () => {
-      console.log('a user disconnected');
+      socketDebug('a user disconnected');
     });
   });
 

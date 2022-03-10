@@ -1,4 +1,3 @@
-const { assert } = require('chai');
 const { io: Client } = require('socket.io-client');
 const getServerStarter = require('../index');
 
@@ -19,8 +18,6 @@ describe('first test', () => {
   });
 
   it('should respond', (done) => {
-    //clientSocket.on('trigger', done);
-
     clientSocket.emit('addPerson', { name: 'test', age: 0 });
     clientSocket.emit('getPeople');
     clientSocket.on('receiveAllPeople', () => done());

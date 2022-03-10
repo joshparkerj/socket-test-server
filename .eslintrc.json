@@ -18,5 +18,13 @@
         "react"
     ],
     "rules": {
-    }
+    },
+    "overrides": [
+        {
+            "files": ["test/*.test.js"],
+            "env": {
+                "mocha": true
+            }
+        }
+    ]
 }
