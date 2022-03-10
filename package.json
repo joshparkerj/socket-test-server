@@ -8,7 +8,7 @@
     "build": "test -f ./client/server-address.json || echo \"\\\"127.0.0.1\\\"\" >> ./client/server-address.json && webpack",
     "dev-build": "webpack --watch",
     "start": "node start.js",
-    "lint": "npx eslint ."
+    "lint": "npx eslint **/*"
   },
   "author": "",
   "license": "ISC",
@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "debug": "^4.3.3",
+    "eslint-plugin-json": "^3.1.0",
     "express": "^4.17.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",

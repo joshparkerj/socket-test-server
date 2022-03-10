@@ -6,7 +6,8 @@
     },
     "extends": [
         "plugin:react/recommended",
-        "airbnb"
+        "airbnb",
+        "plugin:json/recommended"
     ],
     "parserOptions": {
         "ecmaFeatures": {
@@ -26,5 +27,6 @@
                 "mocha": true
             }
         }
-    ]
+    ],
+    "ignorePatterns": ["public/*"]
 }
