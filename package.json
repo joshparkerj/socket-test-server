@@ -7,7 +7,7 @@
     "test": "mocha",
     "build": "test -f ./client/server-address.json || echo \"\\\"127.0.0.1\\\"\" >> ./client/server-address.json && webpack",
     "dev-build": "webpack --watch",
-    "start": "node index.js"
+    "start": "node start.js"
   },
   "author": "",
   "license": "ISC",
