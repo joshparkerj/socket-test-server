@@ -5,13 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
+    "build": "test -f ./client/server-address.json || echo \"\\\"127.0.0.1\\\"\" >> ./client/server-address.json && webpack",
     "dev-build": "webpack --watch",
     "start": "node index.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.17.5",
     "@babel/preset-react": "^7.14.5",
     "babel-loader": "^8.2.2",
     "eslint": "^7.31.0",
